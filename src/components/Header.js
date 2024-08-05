@@ -1,18 +1,26 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import { AppBar, Box, Toolbar, Button } from '@mui/material';
 
 const Header = ({ showBasket, showProductList, itemsInBasket }) => (
   <AppBar position="static">
     <Toolbar>
-      <Typography variant="h6" style={{ flexGrow: 1 }}>
-        Supermarket
-      </Typography>
-      <Button color="inherit" onClick={showProductList}>
-        Home
-      </Button>
-      <Button color="inherit" onClick={showBasket}>
-        Basket {itemsInBasket ? `(${itemsInBasket})` : ''}
-      </Button>
+      <Box
+        component="img"
+        sx={{
+          height: 50,
+        }}
+        alt="Logo"
+        src={`${process.env.PUBLIC_URL}/logo.png`}
+      />
+      <Box sx={{ flexGrow: 1 }} />
+      <Box>
+        <Button color="inherit" onClick={showProductList}>
+          Home
+        </Button>
+        <Button color="inherit" onClick={showBasket}>
+          Basket {itemsInBasket ? `(${itemsInBasket})` : ''}
+        </Button>
+      </Box>
     </Toolbar>
   </AppBar>
 );
