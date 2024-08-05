@@ -8,7 +8,7 @@ import Basket from './components/Basket';
 const App = () => {
   const [products, setProducts] = useState([]);
   const [basket, setBasket] = useState([]);
-  const [error, setError] = useState(null);
+  const [fetchError, setFetchError] = useState(null);
   const [view, setView] = useState('productList');
 
   const showBasket = () => setView('basket');
@@ -20,7 +20,7 @@ const App = () => {
         'https://s3.eu-west-2.amazonaws.com/techassessment.cognitoedu.org/products.json',
       )
       .then((response) => setProducts(response.data))
-      .catch((err) => setError(err));
+      .catch((error) => setFetchError(error));
   }, []);
 
   const addToBasket = (product) => {
@@ -34,7 +34,7 @@ const App = () => {
     }
   };
 
-  if (error) {
+  if (fetchError) {
     return <div>Error fetching data</div>;
   }
 
