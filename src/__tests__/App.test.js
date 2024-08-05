@@ -1,15 +1,14 @@
-// src/App.test.js
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { render, screen, waitFor } from '@testing-library/react';
 import axios from 'axios';
 import App from '../App';
 
 jest.mock('axios');
 
 const mockProducts = [
-  { id: 1, name: 'Product 1', price: 10 },
-  { id: 2, name: 'Product 2', price: 20 },
+  { id: 1, name: 'Test Product 1', price: 10 },
+  { id: 2, name: 'Test Product 2', price: 20 },
 ];
 
 test('renders products after successful API call', async () => {
@@ -18,8 +17,8 @@ test('renders products after successful API call', async () => {
   render(<App />);
 
   await waitFor(() => {
-    expect(screen.getByText('Product 1: $10')).toBeInTheDocument();
-    expect(screen.getByText('Product 2: $20')).toBeInTheDocument();
+    expect(screen.getByText('Test Product 1: $10')).toBeInTheDocument();
+    expect(screen.getByText('Test Product 2: $20')).toBeInTheDocument();
   });
 });
 

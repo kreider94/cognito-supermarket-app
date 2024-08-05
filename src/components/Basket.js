@@ -31,7 +31,7 @@ const Basket = ({ basketItems, removeFromBasket }) => (
 Basket.propTypes = {
   basketItems: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired, // Ensure each item has a unique identifier
+      id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
     }),
