@@ -2,11 +2,12 @@
 
 ## Overview
 
-The Supermarket App is a simple React application designed to display a list of products retrieved from an API endpoint. Users can add products to a shopping basket, view the items in their basket and remove items from their basket. The app handles both successful and failed API requests, providing feedback to the user.
+This Supermarket App is a simple React application designed to display a list of products retrieved from an API endpoint. Users can add products to a shopping basket, view the items in their basket and remove items from their basket. The app handles both successful and failed API requests, providing feedback to the user.
 
 ## Features
 
 - Displays a list of products with names and prices.
+- Shows users a product description via a dropdown.
 - Allows users to add products to a basket.
 - Allows users to remove products from the basket.
 - Shows the items added to the basket.
