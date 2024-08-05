@@ -72,9 +72,9 @@ In this project, the useState hook from React was used for state management. Thi
 
 **Why useState?**
 
-Simplicity: The useState hook is part of the React core library and provides a simple way to manage state in functional components.
-Local State: The state management requirements are local to individual components and do not need to be shared across many components.
-Ease of Use: useState is easy to understand and implement, making it suitable for small to medium-sized applications.
+- Simplicity: The useState hook is part of the React core library and provides a simple way to manage state in functional components.
+- Local State: The state management requirements are local to individual components and do not need to be shared across many components.
+- Ease of Use: useState is easy to understand and implement, making it suitable for small to medium-sized applications.
 
 **When to Consider Redux or Other State Management Libraries**
 
