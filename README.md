@@ -66,3 +66,16 @@ To get started with the project, follow these steps:
     ```
     npm test
     ```
+
+## State Management Explanation
+In this project, the useState hook from React was used for state management. This decision was made because the application is relatively simple, with state management needs confined to a few components. The useState hook is straightforward to use and fits well with the current requirements of the app.
+
+**Why useState?**
+
+Simplicity: The useState hook is part of the React core library and provides a simple way to manage state in functional components.
+Local State: The state management requirements are local to individual components and do not need to be shared across many components.
+Ease of Use: useState is easy to understand and implement, making it suitable for small to medium-sized applications.
+
+**When to Consider Redux or Other State Management Libraries**
+
+If the application grows larger and more complex, with state that needs to be shared across many components or managed in a more centralized way, then it might be beneficial to consider a more robust state management solution like Redux or Context API. These tools provide more powerful state management capabilities and can help manage complex state interactions and side effects.

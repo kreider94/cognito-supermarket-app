@@ -12,7 +12,6 @@ const Header = ({ showBasket, showProductList, itemsInBasket }) => (
         alt="Logo"
         src={`${process.env.PUBLIC_URL}/logo.png`}
       />
-      <Box sx={{ flexGrow: 1 }} />
       <Box>
         <Button color="inherit" onClick={showProductList}>
           Home
