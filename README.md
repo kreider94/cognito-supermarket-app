@@ -1,4 +1,4 @@
-# Supermarket App
+# Cognito Supermarket App
 
 ## Overview
 
@@ -48,8 +48,8 @@ To get started with the project, follow these steps:
 
 1. **Clone the repository**:
    ```
-   git clone https://github.com/your-username/supermarket-app.git
-   cd supermarket-app
+   git clone https://github.com/kreider94/cognito-supermarket-app.git
+   cd cognito-supermarket-app
    ```
 
 2. **Install dependencies:**:
