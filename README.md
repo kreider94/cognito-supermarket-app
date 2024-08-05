@@ -11,6 +11,7 @@ This Supermarket App is a simple React application designed to display a list of
 - Allows users to add products to a basket.
 - Allows users to remove products from the basket.
 - Shows the items added to the basket.
+- Shows the total sum of the items in the basket.
 - Handles API request errors and displays an error message.
 - Responsive design to work on both desktop and mobile screens.
 

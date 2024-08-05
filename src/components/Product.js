@@ -25,6 +25,15 @@ const Product = ({ product, addToBasket }) => {
             <Grid item xs={12} md={8}>
               <ListItemText primary={`${product.name}: $${product.price}`} />
               <Button onClick={handleToggle}>more</Button>
+              <Collapse in={expanded} timeout="auto" unmountOnExit>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  style={{ padding: '0 16px 16px' }}
+                >
+                  {product.description}
+                </Typography>
+              </Collapse>
             </Grid>
             <Grid item xs={12} md={4} style={{ textAlign: 'right' }}>
               <Button
@@ -41,15 +50,6 @@ const Product = ({ product, addToBasket }) => {
             </Grid>
           </Grid>
         </ListItem>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            style={{ padding: '0 16px 16px' }}
-          >
-            {product.description}
-          </Typography>
-        </Collapse>
       </Box>
     </Grid>
   );
