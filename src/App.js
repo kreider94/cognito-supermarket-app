@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Container, CssBaseline } from '@mui/material';
+import Header from './components/Header';
+import ProductList from './components/ProductList';
+import Basket from './components/Basket';
 
-function App() {
+const App = () => {
+  const [products, setProducts] = useState([]);
+  const [basket, setBasket] = useState([]);
+  const [error, setError] = useState(null);
+  const [view, setView] = useState('productList');
+
+  const showBasket = () => setView('basket');
+  const showProductList = () => setView('productList');
+
+  useEffect(() => {
+    axios
+      .get(
+        'https://s3.eu-west-2.amazonaws.com/techassessment.cognitoedu.org/products.json',
+      )
+      .then((response) => setProducts(response.data))
+      .catch((err) => setError(err));
+  }, []);
+
+  const addToBasket = (product) => {
+    setBasket([...basket, product]);
+  };
+
+  const removeFromBasket = (id) => {
+    const index = basket.findIndex((item) => item.id === id);
+    if (index !== -1) {
+      setBasket(basket.filter((_, i) => i !== index));
+    }
+  };
+
+  if (error) {
+    return <div>Error fetching data</div>;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CssBaseline />
+      <Header
+        showBasket={showBasket}
+        showProductList={showProductList}
+        itemsInBasket={basket?.length}
+      />
+      <Container sx={{ pt: 5 }}>
+        {view === 'productList' && (
+          <ProductList products={products} addToBasket={addToBasket} />
+        )}
+        {view === 'basket' && (
+          <Basket basketItems={basket} removeFromBasket={removeFromBasket} />
+        )}
+      </Container>
+    </>
   );
-}
+};
 
 export default App;
